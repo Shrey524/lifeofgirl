@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/cover"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cover2" />
+
+            <ImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="125dp"
+                android:elevation="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profile"
+                app:layout_constraintStart_toStartOf="@+id/profile"
+                app:srcCompat="@drawable/pfp2"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:id="@+id/subheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Intro"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_friend" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/posts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/post" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile"
+                android:layout_width="0dp"
+                android:layout_height="210dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@color/white"
+                android:elevation="16dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cover">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFFFF">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Lorem ipsum"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toEndOf="@+id/save_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/occupation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="Lorem ipsum"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@+id/name"
+                        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                    <ImageView
+                        android:id="@+id/save_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="130dp"
+                        app:layout_constraintEnd_toStartOf="@+id/time_icon"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bookmark" />
+
+                    <ImageView
+                        android:id="@+id/time_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="130dp"
+                        app:layout_constraintEnd_toStartOf="@+id/credit_icon"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/save_icon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/clock" />
+
+                    <ImageView
+                        android:id="@+id/credit_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="130dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/time_icon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/notepad" />
+
+                    <TextView
+                        android:id="@+id/save_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="People Saved"
+                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@+id/save_icon"
+                        app:layout_constraintStart_toStartOf="@+id/save_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/save_icon" />
+
+                    <TextView
+                        android:id="@+id/time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Total time"
+                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@+id/time_icon"
+                        app:layout_constraintStart_toStartOf="@+id/time_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/time_icon" />
+
+                    <TextView
+                        android:id="@+id/audit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Audit Credit"
+                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@+id/credit_icon"
+                        app:layout_constraintStart_toStartOf="@+id/credit_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/credit_icon" />
+
+                    <TextView
+                        android:id="@+id/people_saved_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="8"
+                        android:textSize="9sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/save_text"
+                        app:layout_constraintStart_toStartOf="@+id/save_text"
+                        app:layout_constraintTop_toBottomOf="@+id/save_text" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="30 min"
+                        android:textSize="9sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@+id/time_text"
+                        app:layout_constraintStart_toStartOf="@+id/time_text"
+                        app:layout_constraintTop_toBottomOf="@+id/time_text" />
+
+                    <TextView
+                        android:id="@+id/Audit_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="25"
+                        android:textSize="9sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@+id/audit_text"
+                        app:layout_constraintStart_toStartOf="@+id/audit_text"
+                        app:layout_constraintTop_toBottomOf="@+id/audit_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/add_friend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/circular_rectangle"
+                android:text="Add Friend"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/red"
+                app:layout_constraintEnd_toStartOf="@+id/more"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile" />
+
+            <Button
+                android:id="@+id/more"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginRight="60dp"
+                android:textColor="@color/white"
+                android:text="..."
+                android:background="@drawable/circular_rectangle"
+                android:textSize="14sp"
+                app:backgroundTint="@color/gray"
+                app:iconPadding="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile" />
+
+            <ImageView
+                android:id="@+id/student_logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subheading"
+                app:srcCompat="@drawable/students_cap" />
+
+
+            <ImageView
+                android:id="@+id/ambasador_logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/student_logo"
+                app:srcCompat="@drawable/brand_awareness" />
+
+            <ImageView
+                android:id="@+id/location_logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ambasador_logo"
+                app:srcCompat="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/from_logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location_logo"
+                app:srcCompat="@drawable/placeholder" />
+
+            <TextView
+                android:id="@+id/student_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Student At"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/student_logo"
+                app:layout_constraintStart_toEndOf="@+id/student_logo"
+                app:layout_constraintTop_toTopOf="@+id/student_logo"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/ambassador_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Log Ambassador"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ambasador_logo"
+                app:layout_constraintStart_toEndOf="@+id/ambasador_logo"
+                app:layout_constraintTop_toTopOf="@+id/ambasador_logo" />
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Lives in"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/location_logo"
+                app:layout_constraintStart_toEndOf="@+id/location_logo"
+                app:layout_constraintTop_toTopOf="@+id/location_logo" />
+
+            <TextView
+                android:id="@+id/from_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="sans-serif-light"
+                android:text="From"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/from_logo"
+                app:layout_constraintStart_toEndOf="@+id/from_logo"
+                app:layout_constraintTop_toTopOf="@+id/from_logo" />
+
+            <Button
+                android:id="@+id/photo"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Photos"
+                android:textSize="10sp"
+                android:background="@drawable/circular_rectangle_2"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/from_logo" />
+
+            <Button
+                android:id="@+id/music"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="Music"
+                android:textSize="10sp"
+                android:background="@drawable/circular_rectangle_2"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintBottom_toBottomOf="@+id/photo"
+                app:layout_constraintStart_toEndOf="@+id/photo"
+                app:layout_constraintTop_toTopOf="@+id/photo" />
+
+            <Button
+                android:id="@+id/faq"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="Did you know"
+                android:textSize="10sp"
+                android:background="@drawable/circular_rectangle_2"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintBottom_toBottomOf="@+id/music"
+                app:layout_constraintStart_toEndOf="@+id/music"
+                app:layout_constraintTop_toTopOf="@+id/music" />
+
+            <TextView
+                android:id="@+id/post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Recent Posts"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
